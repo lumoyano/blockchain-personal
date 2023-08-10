@@ -1,4 +1,6 @@
-package main.java;
+package classes;
+
+import sun.security.provider.DSAPublicKeyImpl;
 
 import java.io.Serializable;
 import java.security.InvalidKeyException;
@@ -18,7 +20,7 @@ public class Block implements Serializable{
     private Integer miningPoints = 0;
     private Double luck = 0.0;
 
-    private arrayList<Transaction> transactionLedger = new ArrayList<Transaction>();
+    private ArrayList<Transaction> transactionLedger = new ArrayList<Transaction>();
 
     //constructors
     //constructor to create the initial block
@@ -44,8 +46,8 @@ public class Block implements Serializable{
     //constructor for initializing after retrieval/adding new blocks
     public Block (LinkedList<Block> currentBlockchain) {
         Block lastBlock = currentBlockchain.getLast();
-//        prevHash = lastBlock.getCurrHash();
-//        ledgerId = lastBlock.getLedgerId() + 1;
+        prevHash = lastBlock.getCurrHash();
+        ledgerId = lastBlock.getLedgerId() + 1;
         luck = Math.random() * 1000000;
     }
 
@@ -54,7 +56,7 @@ public class Block implements Serializable{
     ) throws InvalidKeyException, SignatureException {
         signing.initVerify(new DSAPublicKeyImpl(this.minedBy));
         signing.update(this.toString().getBytes());
-        return signing.verify(this.currentHash);
+        return signing.verify(this.currHash);
     }
 
     public boolean equals(Object o) {
@@ -65,7 +67,7 @@ public class Block implements Serializable{
     }
 
     public int hashCode() {
-        return Arrays.hashCode(getPrevHash);
+        return Arrays.hashCode(getPrevHash());
     }
 
     public byte[] getPrevHash() { return prevHash; }
@@ -74,9 +76,9 @@ public class Block implements Serializable{
     public void setPrevHash(byte[] prevHash) { this.prevHash = prevHash; }
     public void setCurrHash(byte[] currHash) { this.currHash = currHash; }
 
-    public arrayList<Transaction> getTransactionLedger(){ return transactionLedger; }
-    public void setTransactionLedger(arrayList<Transaction> transactionLedger)) {
-        this.transactionLedger = transactionLedger;;
+    public ArrayList<Transaction> getTransactionLedger(){ return transactionLedger; }
+    public void setTransactionLedger(ArrayList<Transaction> transactionLedger) {
+        this.transactionLedger = transactionLedger;
     }
 
     public String getTimeStamp() { return timeStamp; }
