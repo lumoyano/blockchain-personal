@@ -1,4 +1,4 @@
-package classes;
+package main.model;
 
 import sun.security.provider.DSAPublicKeyImpl;
 
@@ -9,8 +9,6 @@ import java.security.SignatureException;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Base64;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class Transaction implements Serializable {
     private byte[] from;

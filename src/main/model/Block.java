@@ -1,4 +1,4 @@
-package classes;
+package main.model;
 
 import sun.security.provider.DSAPublicKeyImpl;
 

@@ -1,4 +1,4 @@
-package classes;
+package main.model;
 
 import java.io.Serializable;
 import java.security.*;
