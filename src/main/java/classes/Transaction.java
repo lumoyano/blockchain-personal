@@ -12,7 +12,7 @@ import java.util.Base64;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Transaction {
+public class Transaction implements Serializable {
     private byte[] from;
     private String fromFX;
     private byte[] to;
