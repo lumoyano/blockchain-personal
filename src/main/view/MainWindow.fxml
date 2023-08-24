@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.MainViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -22,9 +27,9 @@
       </MenuBar>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefWidth="800.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="Current Block Transactions">
+          <TableColumn maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Current Block Transactions">
                <columns>
                 <TableColumn prefWidth="75.0" text="From" />
                   <TableColumn prefWidth="75.0" text="To" />
@@ -39,4 +44,31 @@
          </columnResizePolicy>
       </TableView>
    </center>
+   <bottom>
+      <BorderPane maxHeight="-Infinity" prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <left>
+            <AnchorPane minHeight="-Infinity" prefHeight="55.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Your Balance: " />
+                  <TextField layoutX="15.0" layoutY="23.0" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="55.0" prefWidth="505.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea layoutX="10.0" layoutY="23.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="518.0" />
+                  <Label layoutX="14.0" layoutY="6.0" text="Your Address/Public Key:" />
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="6.0" layoutY="22.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="83.0" text="Refresh" />
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </bottom>
 </BorderPane>
