@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8365c553-74b1-497d-85b0-2e76a193a953" name="Changes" comment="finished Ecoin class">
-      <change afterPath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/view/AddNewTransactionWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/blockchain.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/db/blockchain.sqbpro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/wallet.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/wallet.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2U8GYl1ZAQk2r8dxCVgAVbsCq2C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,12 +77,28 @@
       <option name="project" value="LOCAL" />
       <updated>1692669130605</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="created MainWindow inside Scene Builder">
+      <created>1692761177477</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692761177478</updated>
+    </task>
+    <task id="LOCAL-00004" summary="MainWindow setup. Created Controller class">
+      <created>1692849194038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692849194038</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init() setup&#10;added javafx open libraries&#10;created prototypes for thread and data files" />
     <MESSAGE value="finished Ecoin class" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished Ecoin class" />
+    <MESSAGE value="created MainWindow inside Scene Builder" />
+    <MESSAGE value="MainWindow setup. Created Controller class" />
+    <option name="LAST_COMMIT_MESSAGE" value="MainWindow setup. Created Controller class" />
   </component>
 </project>
