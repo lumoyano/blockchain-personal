@@ -14,7 +14,7 @@ public class PeerServer extends  Thread{
         while (true) {
             try {
                 new PeerRequestThread(serverSocket.accept()).start();
-            } catch (IOException) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
