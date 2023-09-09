@@ -13,7 +13,7 @@ public class UI extends Application {
     public void start(Stage stage)  {
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("main/view/MainWindow.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../view/MainWindow.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
