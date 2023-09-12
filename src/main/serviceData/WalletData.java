@@ -25,12 +25,12 @@ public class WalletData {
         Statement walletStatement = walletConnection.createStatement();
         ResultSet resultSet;
         resultSet = walletStatement.executeQuery(" SELECT * FROM WALLET ");
-        KeyFactory keyFactory = KeyFactory.getInstance("    DSA");
+        KeyFactory keyFactory = KeyFactory.getInstance("DSA");
         PublicKey pub2 = null;
         PrivateKey prv2 = null;
         while(resultSet.next()) {
             pub2 = keyFactory.generatePublic(new X509EncodedKeySpec(resultSet.getBytes("PUBLIC_KEY")));
-            prv2 = KeyFactory.generatePrivate(new PKCS8EncodedKeySpec(resultSet.getBytes("PRIVATE_KEY")));
+            prv2 = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(resultSet.getBytes("PRIVATE_KEY")));
         }
         this.wallet = new Wallet(pub2, prv2);
     }
