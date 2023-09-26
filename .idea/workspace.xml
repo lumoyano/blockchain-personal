@@ -10,21 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8365c553-74b1-497d-85b0-2e76a193a953" name="Changes" comment="Finished UI Thread">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain-personal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain-personal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/blockchain.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/db/blockchain.sqbpro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/wallet.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/wallet.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ECoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ECoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/serviceData/BlockchainData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/serviceData/BlockchainData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/serviceData/WalletData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/serviceData/WalletData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/threads/PeerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/threads/PeerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/threads/PeerRequestThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/threads/PeerRequestThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/threads/PeerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/threads/PeerServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/AddNewTransactionWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/AddNewTransactionWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,24 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "full.screen.before.presentation.mode": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/lumoy/Downloads/openjfx-20.0.2_windows-x64_bin-sdk/javafx-sdk-20.0.2/lib",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lumoy/Downloads/openjfx-20.0.2_windows-x64_bin-sdk/javafx-sdk-20.0.2/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lumoy\OneDrive\Área de Trabalho\Workspaces\blockchain-personal\libs" />
@@ -186,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694537528678</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finished BlockChainData from book">
+      <created>1695769390769</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695769390769</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,7 +207,8 @@
     <MESSAGE value="Finished Threads/Chapter 5" />
     <MESSAGE value="Finished WalletData" />
     <MESSAGE value="Static error call fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Static error call fixed" />
+    <MESSAGE value="Finished BlockChainData from book" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished BlockChainData from book" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
