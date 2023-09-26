@@ -11,7 +11,7 @@ import java.sql.*;
 public class WalletData {
     private Wallet wallet;
 
-    private static WalletData instance;
+    private static final WalletData instance;
 
     static {
         instance = new WalletData();

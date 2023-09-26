@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class PeerRequestThread extends Thread {
 
-    private Socket socket;
+    private final Socket socket;
 
     public PeerRequestThread(Socket socket) {
         this.socket = socket;
