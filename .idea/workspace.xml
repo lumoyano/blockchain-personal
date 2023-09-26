@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Open Files" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8365c553-74b1-497d-85b0-2e76a193a953" name="Changes" comment="finished Ecoin class">
-      <change afterPath="$PROJECT_DIR$/src/main/view/AddNewTransactionWindow.fxml" afterDir="false" />
+    <list default="true" id="8365c553-74b1-497d-85b0-2e76a193a953" name="Changes" comment="Finished UI Thread">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain-personal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain-personal.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/blockchain.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/db/blockchain.sqbpro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/wallet.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/wallet.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ECoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ECoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/serviceData/BlockchainData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/serviceData/BlockchainData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/serviceData/WalletData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/serviceData/WalletData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/threads/PeerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/threads/PeerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/threads/PeerRequestThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/threads/PeerRequestThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/threads/PeerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/threads/PeerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/AddNewTransactionWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/AddNewTransactionWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/MainWindow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,16 +34,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2U8GYl1ZAQk2r8dxCVgAVbsCq2C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -36,20 +54,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lumoy/Downloads/openjfx-20.0.2_windows-x64_bin-sdk/javafx-sdk-20.0.2/lib&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "full.screen.before.presentation.mode": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/lumoy/Downloads/openjfx-20.0.2_windows-x64_bin-sdk/javafx-sdk-20.0.2/lib",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lumoy\OneDrive\Área de Trabalho\Workspaces\blockchain-personal\libs" />
       <recent name="C:\Users\lumoy\OneDrive\Área de Trabalho\Workspaces\blockchain-personal\db" />
       <recent name="C:\Users\lumoy\OneDrive\Área de Trabalho\Workspaces\blockchain-personal\src\main" />
     </key>
@@ -91,14 +116,108 @@
       <option name="project" value="LOCAL" />
       <updated>1692849194038</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="empty new transaction fxml file">
+      <created>1692907636001</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692907636001</updated>
+    </task>
+    <task id="LOCAL-00006" summary="TransactionController initial file">
+      <created>1692908713903</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692908713903</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Finished controller classes">
+      <created>1692921513721</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692921513721</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Finished UI Thread">
+      <created>1693342727835</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693342727835</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Finished MiningThread">
+      <created>1693356241377</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693356241377</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Finished peer server Thread">
+      <created>1694068344934</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694068344934</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Finished UI Thread">
+      <created>1694068462422</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694068462422</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Finished Threads/Chapter 5">
+      <created>1694238528977</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694238528977</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Finished WalletData">
+      <created>1694536737093</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1694536737093</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Static error call fixed">
+      <created>1694537528678</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694537528678</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init() setup&#10;added javafx open libraries&#10;created prototypes for thread and data files" />
     <MESSAGE value="finished Ecoin class" />
     <MESSAGE value="created MainWindow inside Scene Builder" />
     <MESSAGE value="MainWindow setup. Created Controller class" />
-    <option name="LAST_COMMIT_MESSAGE" value="MainWindow setup. Created Controller class" />
+    <MESSAGE value="empty new transaction fxml file" />
+    <MESSAGE value="TransactionController initial file" />
+    <MESSAGE value="Finished controller classes" />
+    <MESSAGE value="Finished MiningThread" />
+    <MESSAGE value="Finished peer server Thread" />
+    <MESSAGE value="Finished UI Thread" />
+    <MESSAGE value="Finished Threads/Chapter 5" />
+    <MESSAGE value="Finished WalletData" />
+    <MESSAGE value="Static error call fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Static error call fixed" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
