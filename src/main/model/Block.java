@@ -31,14 +31,14 @@ public class Block implements Serializable{
     //constructor for retrieval from the db
     public Block(byte[] prevHash, byte[] currHash, byte[] minedBy,
                  String timeStamp, Integer ledgerId, Integer miningPoints, Double luck
-//                 ,arrayList<Transaction> transactionLedger
+                 ,ArrayList<Transaction> transactionLedger
     ) {
         this.prevHash = prevHash;
         this.currHash = currHash;
         this.timeStamp = timeStamp;
         this.minedBy = minedBy;
         this.ledgerId = ledgerId;
-//        this.transactionLedger = transactionLedger;
+        this.transactionLedger = transactionLedger;
         this.miningPoints = miningPoints;
         this.luck = luck;
     }

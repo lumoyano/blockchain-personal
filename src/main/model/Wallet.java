@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.security.*;
 
 public class Wallet implements Serializable {
-    private KeyPair keyPair;
+    private final KeyPair keyPair;
 
     //constructors for generating new key pairs
     public Wallet() throws NoSuchAlgorithmException {
