@@ -19,7 +19,7 @@ public class ECoin extends Application {
     public void start(Stage primaryStage) throws Exception {
         new UI().start(primaryStage);
         new PeerClient().start();
-        new PeerServer(6000).start();;
+        new PeerServer(6000).start();
         new MiningThread().start();
     }
 
