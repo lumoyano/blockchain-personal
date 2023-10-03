@@ -22,14 +22,14 @@ public class Transaction implements Serializable {
     private Integer ledgerID;
 
     //constructor for loading with existing signature
-    public Transaction( byte[] from, byte[] to, byte[] signature,
-                        String timestamp,Integer value, Integer ledgerID ) {
+    public Transaction(byte[] from, byte[] to, byte[] signature,
+                       String timestamp, Integer value, Integer ledgerID) {
         Base64.Encoder encoder = Base64.getEncoder();
         this.from = from;
         this.fromFX = encoder.encodeToString(from);
         this.to = to;
         this.toFX = encoder.encodeToString(to);
-        this.value =  value;
+        this.value = value;
         this.signature = signature;
         this.signatureFX = encoder.encodeToString(signature);
         this.ledgerID = ledgerID;
@@ -41,10 +41,10 @@ public class Transaction implements Serializable {
             throws InvalidKeyException, SignatureException {
         Base64.Encoder encoder = Base64.getEncoder();
         this.from = fromWallet.getPublicKey().getEncoded();
-        this.fromFX = encoder.encodeToString(fromWallet.getPublicKey().getEncoded);
+        this.fromFX = encoder.encodeToString(fromWallet.getPublicKey().getEncoded());
         this.to = toAddress;
-        this.toFX = encoder.encodeToString(toAddress)
-        this.value =  value;
+        this.toFX = encoder.encodeToString(toAddress);
+        this.value = value;
         this.ledgerID = ledgerID;
         this.timestamp = LocalDateTime.now().toString();
         signing.initSign(fromWallet.getPrivateKey());
@@ -54,7 +54,7 @@ public class Transaction implements Serializable {
         this.signatureFX = encoder.encodeToString(this.signature);
     }
 
-    public boolean isVerified (Signature signing) throws InvalidKeyException, SignatureException {
+    public boolean isVerified(Signature signing) throws InvalidKeyException, SignatureException {
         signing.initVerify(new DSAPublicKeyImpl(this.getFrom())); //dsapublickeyimpl converts from byte to publickey object
         signing.update(this.toString().getBytes());
         return signing.verify(this.signature);
@@ -157,6 +157,6 @@ public class Transaction implements Serializable {
         if (this == obj) return true;
         if (!(obj instanceof Transaction)) return false;
         Transaction that = (Transaction) obj;
-        return Arrays.equals(getSignature(), that.getSignature);
+        return Arrays.equals(getSignature(), that.getSignature());
     }
 }

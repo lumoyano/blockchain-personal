@@ -23,8 +23,8 @@ public class PeerRequestThread extends Thread {
         try {
             ObjectOutputStream objectOutput = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream objectInput = new ObjectInputStream(socket.getInputStream());
-            LinkedList<Block> receivedBC = (LinkedList<Block>)objectInput.readObject;
-            System.out.println("LedgerID: " + receivedBC.getLast().getLedgerID() +
+            LinkedList<Block> receivedBC = (LinkedList<Block>) objectInput.readObject();
+            System.out.println("LedgerID: " + receivedBC.getLast().getLedgerId() +
                     " Size: " + receivedBC.getLast().getTransactionLedger().size());
             objectOutput.writeObject(BlockchainData.getInstance().getBlockchainConsensus(receivedBC));
         } catch (IOException | ClassNotFoundException e) {

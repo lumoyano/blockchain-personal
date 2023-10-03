@@ -223,7 +223,7 @@ public class BlockchainData {
         try {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\lumoy\\OneDrive\\Área de Trabalho\\Workspaces\\blockchain-personal\\db\\blockchain.db");
             PreparedStatement pstmt;
-            pstmt.prepareStatement("INSERT INTO BLOCKCHAIN(PREVIOUS_HASH, " +
+            pstmt = connection.prepareStatement("INSERT INTO BLOCKCHAIN(PREVIOUS_HASH, " +
                     "CURRENT_HASH, " +
                     "LEDGER_ID, " +
                     "CREATED_ON, " +
