@@ -9,5 +9,8 @@
         <module name="blockchain-personal" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="blockchain-personal" target="20" />
+    </bytecodeTargetLevel>
   </component>
 </project>
