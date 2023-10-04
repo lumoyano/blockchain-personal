@@ -8,6 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import main.model.Transaction;
 import main.serviceData.BlockchainData;
+import main.serviceData.WalletData;
 
 import javax.swing.text.PlainDocument;
 import javax.swing.text.html.Option;
@@ -43,7 +44,7 @@ public class MainWindowController {
         value.setCellValueFactory(new PropertyValueFactory<>("value"));
         signature.setCellValueFactory(new PropertyValueFactory<>("signatureFX"));
         timestamp.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
-        eCoins.setText(BlockchainData.getInstance().getWalletBalanceFX("eCoins"));
+        eCoins.setText(BlockchainData.getInstance().getWalletBalanceFX());
         publicKey.setText(encoder.encodeToString(WalletData.getInstance().getWallet().getPublicKey().getEncoded()));
         tableView.setItems(BlockchainData.getInstance().getTransactionLedgerFX());
         tableView.getSelectionModel().select(0);

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import main.model.Transaction;
 import main.serviceData.BlockchainData;
+import main.serviceData.WalletData;
 
 import java.security.GeneralSecurityException;
 import java.security.Signature;
