@@ -92,7 +92,7 @@ public class ECoin extends Application {
                 pstmt.executeUpdate();
                 Signature transSignature = Signature.getInstance("SHA256withDSA");
                 initBlockRewardTransaction = new Transaction(WalletData.getInstance().getWallet(),
-                        WalletData.getInstance().getWallet().getPublicKey().getEncoded,
+                        WalletData.getInstance().getWallet().getPublicKey().getEncoded(),
                         100, 1, transSignature);
             }
             resultSetBlockchain.close();
@@ -118,6 +118,6 @@ public class ECoin extends Application {
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
         }
-        BlockchainData.getInstance().loadBlockchain();
+        BlockchainData.getInstance().loadBlockChain();
     }
 }

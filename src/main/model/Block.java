@@ -1,11 +1,9 @@
 package main.model;
 
-import sun.security.provider.DSAPublicKeyImpl;
-
 import java.io.Serializable;
-import java.security.InvalidKeyException;
-import java.security.Signature;
-import java.security.SignatureException;
+import java.security.*;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -53,8 +51,10 @@ public class Block implements Serializable{
 
     public boolean isVerified(
             Signature signing
-    ) throws InvalidKeyException, SignatureException {
-        signing.initVerify(new DSAPublicKeyImpl(this.minedBy));
+    ) throws InvalidKeyException, SignatureException, InvalidKeySpecException, NoSuchAlgorithmException {
+        KeyFactory keyFactory = KeyFactory.getInstance("DSA");
+        X509EncodedKeySpec keySpec = new X509EncodedKeySpec(this.minedBy);
+        signing.initVerify(keyFactory.generatePublic(keySpec));
         signing.update(this.toString().getBytes());
         return signing.verify(this.currHash);
     }
