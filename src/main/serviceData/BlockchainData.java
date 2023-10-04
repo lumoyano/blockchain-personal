@@ -5,9 +5,8 @@ import javafx.collections.ObservableList;
 import main.model.*;
 
 import java.security.GeneralSecurityException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PublicKey;
-import java.security.Signature;
+import java.security.*;
+import java.security.spec.X509EncodedKeySpec;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -58,7 +57,7 @@ public class BlockchainData {
         return getBalance(currentBlockChain, newBlockTransactions, WalletData.getInstance().getWallet().getPublicKey()).toString();
     }
 
-    private Object getBalance(LinkedList<Block> blockChain, ObservableList<Transaction> currentLedger, PublicKey walletAddress) {
+    private Integer getBalance(LinkedList<Block> blockChain, ObservableList<Transaction> currentLedger, PublicKey walletAddress) {
         Integer balance = 0;
         for (Block block : blockChain) {
             for (Transaction transaction : block.getTransactionLedger()) {
@@ -93,11 +92,11 @@ public class BlockchainData {
 
     public void addTransaction(Transaction transaction, boolean blockReward) throws GeneralSecurityException {
         try {
-            if (getBalance(currentBlockChain, newBlockTransactions, new DSAPublicKeyImpl(transaction.getFrom()))
-                    < transaction.getValue()
-                    && !blockReward)
+            KeyFactory keyFactory = KeyFactory.getInstance("DSA");
+            X509EncodedKeySpec keySpec = new X509EncodedKeySpec(transaction.getFrom());
+            if (transaction.getValue() > getBalance(currentBlockChain, newBlockTransactions, keyFactory.generatePublic(keySpec)) && !blockReward) {
                 throw new GeneralSecurityException("Not enough funds by sender to record transaction");
-            else {
+            } else {
                 Connection connection = DriverManager.getConnection
                         ("jdbc:sqlite:C:\\Users\\lumoy\\OneDrive\\Área de Trabalho\\Workspaces\\blockchain-personal\\db\\blockchain.db");
 

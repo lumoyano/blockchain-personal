@@ -1,16 +1,14 @@
 package main.model;
 
-import sun.security.provider.DSAPublicKeyImpl;
-
 import java.io.Serializable;
-import java.security.InvalidKeyException;
-import java.security.Signature;
-import java.security.SignatureException;
+import java.security.*;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class Block implements Serializable{
+public class Block implements Serializable {
 
     private byte[] prevHash;
     private byte[] currHash;
@@ -31,7 +29,7 @@ public class Block implements Serializable{
     //constructor for retrieval from the db
     public Block(byte[] prevHash, byte[] currHash, byte[] minedBy,
                  String timeStamp, Integer ledgerId, Integer miningPoints, Double luck
-                 ,ArrayList<Transaction> transactionLedger
+            , ArrayList<Transaction> transactionLedger
     ) {
         this.prevHash = prevHash;
         this.currHash = currHash;
@@ -44,7 +42,7 @@ public class Block implements Serializable{
     }
 
     //constructor for initializing after retrieval/adding new blocks
-    public Block (LinkedList<Block> currentBlockchain) {
+    public Block(LinkedList<Block> currentBlockchain) {
         Block lastBlock = currentBlockchain.getLast();
         prevHash = lastBlock.getCurrHash();
         ledgerId = lastBlock.getLedgerId() + 1;
@@ -53,8 +51,10 @@ public class Block implements Serializable{
 
     public boolean isVerified(
             Signature signing
-    ) throws InvalidKeyException, SignatureException {
-        signing.initVerify(new DSAPublicKeyImpl(this.minedBy));
+    ) throws InvalidKeyException, SignatureException, InvalidKeySpecException, NoSuchAlgorithmException {
+        KeyFactory keyFactory = KeyFactory.getInstance("DSA");
+        X509EncodedKeySpec keySpec = new X509EncodedKeySpec(this.minedBy);
+        signing.initVerify(keyFactory.generatePublic(keySpec));
         signing.update(this.toString().getBytes());
         return signing.verify(this.currHash);
     }
@@ -70,31 +70,69 @@ public class Block implements Serializable{
         return Arrays.hashCode(getPrevHash());
     }
 
-    public byte[] getPrevHash() { return prevHash; }
-    public byte[] getCurrHash() { return currHash; }
+    public byte[] getPrevHash() {
+        return prevHash;
+    }
 
-    public void setPrevHash(byte[] prevHash) { this.prevHash = prevHash; }
-    public void setCurrHash(byte[] currHash) { this.currHash = currHash; }
+    public byte[] getCurrHash() {
+        return currHash;
+    }
 
-    public ArrayList<Transaction> getTransactionLedger(){ return transactionLedger; }
+    public void setPrevHash(byte[] prevHash) {
+        this.prevHash = prevHash;
+    }
+
+    public void setCurrHash(byte[] currHash) {
+        this.currHash = currHash;
+    }
+
+    public ArrayList<Transaction> getTransactionLedger() {
+        return transactionLedger;
+    }
+
     public void setTransactionLedger(ArrayList<Transaction> transactionLedger) {
         this.transactionLedger = transactionLedger;
     }
 
-    public String getTimeStamp() { return timeStamp; }
-    public void setTimeStamp(String timeStamp) { this.timeStamp = timeStamp; }
+    public String getTimeStamp() {
+        return timeStamp;
+    }
 
-    public byte[] getMinedBy() { return minedBy; }
-    public void setMinedBy(byte[] minedBy) { this.minedBy = minedBy; }
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 
-    public Integer getMiningPoints () { return miningPoints; }
-    public void setMiningPoints(Integer miningPoints) { this.miningPoints = miningPoints; }
+    public byte[] getMinedBy() {
+        return minedBy;
+    }
 
-    public Double getLuck() { return luck; }
-    public void setLuck(Double luck) { this.luck = luck; }
+    public void setMinedBy(byte[] minedBy) {
+        this.minedBy = minedBy;
+    }
 
-    public Integer getLedgerId() { return ledgerId; }
-    public void setLedgerId(Integer ledgerId) { this.ledgerId = ledgerId; }
+    public Integer getMiningPoints() {
+        return miningPoints;
+    }
+
+    public void setMiningPoints(Integer miningPoints) {
+        this.miningPoints = miningPoints;
+    }
+
+    public Double getLuck() {
+        return luck;
+    }
+
+    public void setLuck(Double luck) {
+        this.luck = luck;
+    }
+
+    public Integer getLedgerId() {
+        return ledgerId;
+    }
+
+    public void setLedgerId(Integer ledgerId) {
+        this.ledgerId = ledgerId;
+    }
 
     @Override
     public String toString() {
