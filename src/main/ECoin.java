@@ -32,17 +32,18 @@ public class ECoin extends Application {
             Statement walletStatement = walletConnection.createStatement();
             walletStatement.executeUpdate("CREATE TABLE IF NOT EXISTS WALLET ( " +
                 " PRIVATE_KEY BLOB NOT NULL UNIQUE , " +
-                " PUBLIC_KEY BLOB NOT NULL UNIQUE. " +
-                " PRIMARY KEY (PRIVATE_KEY, PUBLIC_KEY))");
+                " PUBLIC_KEY BLOB NOT NULL UNIQUE, " +
+                " PRIMARY KEY (PRIVATE_KEY, PUBLIC_KEY)) ");
             ResultSet resultSet = walletStatement.executeQuery(" SELECT * FROM WALLET ");
             if (!resultSet.next()) {
                 Wallet newWallet = new Wallet();
                 byte[] pubBlob = newWallet.getPublicKey().getEncoded();
                 byte[] prvBlob = newWallet.getPrivateKey().getEncoded();
-                PreparedStatement pstmt = walletConnection.prepareStatement("INSERT INTO WALLET(PRIVATE_KEY, PUBLIC_KEY "+
+                PreparedStatement pstmt = walletConnection.prepareStatement("INSERT INTO WALLET(PRIVATE_KEY, PUBLIC_KEY) "+
                         " VALUES (?,?) ");
                 pstmt.setBytes(1, prvBlob);
-                pstmt.setBytes(1, pubBlob);
+                pstmt.setBytes(2, pubBlob);
+                pstmt.executeUpdate();
             }
             resultSet.close();
             walletStatement.close();
@@ -59,11 +60,11 @@ public class ECoin extends Application {
                     " CURRENT HASH_BLOB UNIQUE, " +
                     " LEDGER_ID INTEGER NOT NULL UNIQUE, " +
                     " CREATED_ON TEXT, " +
-                    " CREATED_BY BLOB " +
+                    " CREATED_BY BLOB, " +
                     " MINING_POINTS TEXT, " +
                     " LUCK NUMERIC, " +
                     " PRIMARY KEY ( ID AUTOINCREMENT) " +
-                    " )");
+                    ")");
 
             //Create the first block
             ResultSet resultSetBlockchain = blockchainStmt.executeQuery(" SELECT * FROM BLOCKCHAIN ");
@@ -79,7 +80,7 @@ public class ECoin extends Application {
                 firstBlock.setCurrHash(signing.sign());
                 PreparedStatement pstmt = blockchainConnection.prepareStatement("INSERT INTO BLOCKCHAIN " +
                         "(PREVIOUS_HASH, " +
-                        "(CURRENT_HASH, LEDGER_ID, " +
+                        "CURRENT_HASH, LEDGER_ID, " +
                         "CREATED_ON, CREATED_BY, MINING_POINTS, LUCK ) " +
                         " VALUES (?,?,?,?,?,?,?) ");
                 pstmt.setBytes(1, firstBlock.getPrevHash());

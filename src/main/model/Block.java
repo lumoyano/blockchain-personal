@@ -18,7 +18,7 @@ public class Block implements Serializable{
     private Integer miningPoints = 0;
     private Double luck = 0.0;
 
-    private ArrayList<Transaction> transactionLedger = new ArrayList<Transaction>();
+    private ArrayList<Transaction> transactionLedger = new ArrayList<>();
 
     //constructors
     //constructor to create the initial block

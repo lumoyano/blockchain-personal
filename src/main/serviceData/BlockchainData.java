@@ -96,7 +96,7 @@ public class BlockchainData {
             if (transaction.getValue() > getBalance(currentBlockChain, newBlockTransactions, keyFactory.generatePublic(keySpec))
                     && !blockReward) {
                 throw new GeneralSecurityException("Not enough funds by sender to record transaction");
-            }else {
+            } else {
                 Connection connection = DriverManager.getConnection
                         ("jdbc:sqlite:C:\\Users\\lumoy\\OneDrive\\Área de Trabalho\\Workspaces\\blockchain-personal\\db\\blockchain.db");
 

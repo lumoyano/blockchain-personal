@@ -20,6 +20,7 @@ public class WalletData {
     public static WalletData getInstance() {
         return instance;
     }
+
     public void loadWallet() throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
         Connection walletConnection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\lumoy\\OneDrive\\Área de Trabalho\\Workspaces\\blockchain-personal\\db\\wallet.db");
         Statement walletStatement = walletConnection.createStatement();
