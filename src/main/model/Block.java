@@ -100,13 +100,11 @@ public class Block implements Serializable{
     public String toString() {
         return "Block{" +
                 "prevHash=" + Arrays.toString(prevHash) +
-                ", currHash=" + Arrays.toString(currHash) +
+                ", timeStamp='" + timeStamp + '\'' +
                 ", minedBy=" + Arrays.toString(minedBy) +
                 ", ledgerId=" + ledgerId +
-                ", timeStamp='" + timeStamp + '\'' +
                 ", miningPoints=" + miningPoints +
                 ", luck=" + luck +
-                ", transactionLedger=" + transactionLedger +
                 '}';
     }
 }

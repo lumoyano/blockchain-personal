@@ -136,13 +136,9 @@ public class Transaction implements Serializable {
     public String toString() {
         return "Transaction{" +
                 "from=" + Arrays.toString(from) +
-                ", fromFX='" + fromFX + '\'' +
                 ", to=" + Arrays.toString(to) +
-                ", toFX='" + toFX + '\'' +
                 ", value=" + value +
-                ", timestamp='" + timestamp + '\'' +
-                ", signature=" + Arrays.toString(signature) +
-                ", signatureFX='" + signatureFX + '\'' +
+                ", timestamp='" + timestamp +
                 ", ledgerID=" + ledgerID +
                 '}';
     }
